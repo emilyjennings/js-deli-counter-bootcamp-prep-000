@@ -42,18 +42,6 @@ function nowServing(notYetServed){
   }
 }
 
-/* we need to just call the next person in line without shifting the line */
-/*
-function nowServing(array) {
-  var arrayLength = array.length;
-  if (arrayLength > 0) {
-    return "Currently serving " + array.shift() + ".";
-  } else if (arrayLength === 0) {
-    return "There is nobody waiting to be served!";
-  }
-}
-*/
-
 var line = [];
 
 function currentLine(array) {
