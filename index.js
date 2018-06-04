@@ -1,7 +1,7 @@
-/* need an array of names 
+/* need an array of names
 need an array of objects with key value pairs of the person's name and their number
 the function for taking a number:
-grab a person's name and assign them a number 
+grab a person's name and assign them a number
 
 print a sentence with the name and number
 
@@ -23,14 +23,27 @@ function takeANumber(katzDeliLine, name) {
 */
 
 var array = [];
+var notYetServed = [];
 
-function takeANumber(array, name) {
-  array.push(name)
-  return "Welcome, " + name + ". You are number " + array.length + " in line."
+function takeANumber(array) {
+  var newPerson = array.length+1
+  notYetServed.push(newPerson)
+  array.push(newPerson)
+  return "Welcome, " + newPerson /* + ". You are number " + array.length + " in line." */
+
 }
 
+function nowServing(notYetServed){
+  var arrayLength = notYetServed.length;
+  if (arrayLength > 0) {
+    return "Currently serving " + notYetServed.shift() + ".";
+  } else if (arrayLength === 0) {
+    return "There is nobody waiting to be served!";
+  }
+}
 
-
+/* we need to just call the next person in line without shifting the line */
+/*
 function nowServing(array) {
   var arrayLength = array.length;
   if (arrayLength > 0) {
@@ -39,7 +52,7 @@ function nowServing(array) {
     return "There is nobody waiting to be served!";
   }
 }
-
+*/
 
 var line = [];
 
@@ -54,4 +67,3 @@ function currentLine(array) {
     return "The line is currently:" + line;
   }
 }
-
